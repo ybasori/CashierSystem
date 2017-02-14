@@ -1,0 +1,20 @@
+	faker productslines :
+	---------------------
+$productslines->productLine = $faker->
+$productslines->textDescription = $faker->sentence($nbWords = 6, $variableNbWords = true)
+$productslines->htmlDescription = $faker->sentence($nbWords = 6, $variableNbWords = true)
+$productslines->image = $faker->imageUrl($width = 150, $height = 150, 'food', true, 'Faker');
+
+	faker products :
+	----------------
+$products->productCode = $faker->
+$products->productName = $faker->
+$products->productLine = $faker->
+$products->productScale = $faker->
+$products->productVendor = $faker->
+$products->productDescription = $faker->
+$products->quantityinStock = $faker->
+$products->buyPrice = $faker->
+$products->MSRP = $faker->
+
+

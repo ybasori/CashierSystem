@@ -1,0 +1,74 @@
+1. productlines : One to Many (products)
+productLine		[primary key]
+textDescription
+htmlDescription
+image
+======================================================================================
+2. products : Many to One (productLines) & Many to Many (orders)
+productCode		[primary key]
+productName
+productLine
+productScale
+productVendor
+productDescription
+quantityinStock
+buyPrice
+MSRP
+======================================================================================
+3. orders : Many to One (customers) & Many to Many (products)
+orderNumber		[primary key]
+orderDate
+requiredDate
+shippedDate
+status
+comments
+customerNumber
+======================================================================================
+4. orderdetails
+orderNumber		[primary key]
+productCode		[primary key]
+quantityOrdered
+priceEach
+orderLineNumber
+======================================================================================
+5. customers : Many to One (employees) & One to One (payments) & One to Many (orders)
+customerNumber		[primary key]
+customerName
+contactLastName
+contactFirstName
+phone
+addressLine1
+addressLine2
+city
+state
+postalCode
+country
+salesRepEmployeeNumber
+creditLimit
+======================================================================================
+6. payments : One to One (customers)
+customerNumber		[foreign key]
+checkNumber		[primary key]
+paymentDate
+amount
+======================================================================================
+7. employees : Many to One (offices) & One to Many (customers)
+employeesNumber
+lastName
+firsName
+extension
+email
+officeCode
+reportsTo
+jobTitle
+======================================================================================
+8. offices : One to Many (employees)
+officeCode		[primary key]
+city
+phone
+addressLine1
+addressLine2
+state
+country
+postalCode
+teritory
