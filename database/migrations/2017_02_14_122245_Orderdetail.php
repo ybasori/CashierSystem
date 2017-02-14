@@ -13,7 +13,17 @@ class Orderdetail extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('orderdetails', function (Blueprint $table) {
+            $table->integer("orderNumber")->unsigned()->nullable();
+            $table->foreign("orderNumber")->references("orderNumber")->on("orders");
+            $table->integer("productCode")->unsigned()->nullable();
+            $table->foreign("productCode")->references("productCode")->on("products");
+            $table->integer("quantityOrdered");
+            $table->integer("priceEach");
+            $table->integer("orderLineNumber");
+            $table->timestamps();
+            $table->softDeletes();
+        });
     }
 
     /**
@@ -24,5 +34,10 @@ class Orderdetail extends Migration
     public function down()
     {
         //
+        Schema::table("orderdetails", function (Blueprint $table){
+            $table->dropForeign(["orderNumber"]);
+            $table->dropForeign(["productCode"]);
+        });
+        Schema::dropIfExists('orderdetails');
     }
 }
