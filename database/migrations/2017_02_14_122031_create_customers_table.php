@@ -14,8 +14,22 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('customerNumber');
+            $table->string('customerName',40);
+            $table->string('contactLastName',40);
+            $table->string('contactFirstName',40);
+            $table->string('phone',20);
+            $table->string('addressLine1');
+            $table->string('addressLine2');
+            $table->string('city',30);
+            $table->string('state',30);
+            $table->string('postalCode',30);
+            $table->string('country',30);
+            $table->integer('salesRepEmployeeNumber')->unsigned()->nullable();
+            $table->foreign('salesRepEmployeeNumber')->references('employeeNumber')->on('employees');
+            $table->decimal('creditLimit',10,2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +40,9 @@ class CreateCustomersTable extends Migration
      */
     public function down()
     {
+        Schema::table('customers', function (Blueprint $table){
+            $table->dropForeign(['salesRepEmployeeNumber']);
+        });
         Schema::dropIfExists('customers');
     }
 }
