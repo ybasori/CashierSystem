@@ -8,13 +8,47 @@ $productslines->image = $faker->imageUrl($width = 150, $height = 150, 'food', tr
 	faker products :
 	----------------
 $products->productCode = $faker->
-$products->productName = $faker->
+$products->productName = $faker->name;
 $products->productLine = $faker->
 $products->productScale = $faker->
-$products->productVendor = $faker->
-$products->productDescription = $faker->
-$products->quantityinStock = $faker->
-$products->buyPrice = $faker->
+$products->productVendor = $faker->company;
+$products->productDescription = $faker->sentence($nbWords = 6, $variableNbWords = true);
+$products->quantityInStock = $faker->randomDigit;
+$products->buyPrice = $faker->numberBetween($min = 10000, $max = 900000);
 $products->MSRP = $faker->
 
 
+	faker orders
+	------------
+$orders->orderNumber = $faker->
+$orders->orderDate = $faker->date($format = 'Y-m-d', $max = 'now');
+$orders->requiredDate = $faker->date($format = 'Y-m-d', $max = 'now');
+$orders->shippedDate = $faker->date($format = 'Y-m-d', $max = 'now');
+$orders->status = $faker->randomElement($array = array ('waiting', 'cancel', 'shipped'));
+$orders->comments = $faker->sentence($nbWords = 6, $variableNbWords = true);
+$orders->customerNumber = $faker->
+
+
+	faker orderdetails
+	------------------
+$orderdetails->orderNumber = $faker->
+$orderdetails->productCode = $faker->
+$orderdetails->quantityOrdered = $faker->randomDigit;
+$orderdetails->priceEach = $faker->numberBetween($min = 10000, $max = 900000);
+$orderdetails->orderLineNumber = $faker->randomDigit;
+
+	faker customers
+	---------------
+$customers->customerNumber = $faker->
+$customers->customerName = $faker->name;
+$customers->contactLastName = $faker->lastName;
+$customers->contactFirstName = $faker->firstName;
+$customers->phone = $faker->e164PhoneNumber;
+$customers->addressLine1 = $faker->address;
+$customers->addressLine2 = $faker->address;
+$customers->city = $faker->city;
+$customers->state = $faker->state;
+$customers->postalCode = $faker->postcode;
+$customers->country = $faker->country;
+$customers->salesRepEmployeeNumber = $faker->
+$customers->creditLimit = $faker->
