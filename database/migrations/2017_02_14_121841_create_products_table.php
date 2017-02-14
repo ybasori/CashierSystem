@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('productCode');
             $table->text('productName');
             $table->integer("productLine")->unsigned()->nullable();
-            $table->foreign("productLine")->references("productLine")->on("productLines");
+            $table->foreign("productLine")->references("productLine")->on("productlines");
             $table->integer('productScale');
             $table->string('productVendor',15);
             $table->text('productDescription');
