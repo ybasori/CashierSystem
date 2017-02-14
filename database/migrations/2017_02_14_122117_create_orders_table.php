@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->integer("customerNumber")->unsigned()->nullable();
             $table->foreign("customerNumber")->references("customerNumber")->on("customers");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +34,9 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table("orders", function (Blueprint $table){
+            $table->dropForeign(["customerNumber"]);
+        });
         Schema::dropIfExists('orders');
     }
 }
