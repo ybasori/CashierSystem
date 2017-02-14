@@ -14,8 +14,16 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('orderNumber');
+            $table->date("orderDate");
+            $table->date("requiredDate");
+            $table->date("shippedDate");
+            $table->integer("status");
+            $table->text("comments");
+            $table->integer("customerNumber")->unsigned()->nullable();
+            $table->foreign("customerNumber")->references("customerNumber")->on("customers");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -26,6 +34,9 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
+        Schema::table("orders", function (Blueprint $table){
+            $table->dropForeign(["customerNumber"]);
+        });
         Schema::dropIfExists('orders');
     }
 }
