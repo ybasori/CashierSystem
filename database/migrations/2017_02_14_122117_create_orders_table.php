@@ -15,9 +15,9 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('orderNumber');
-            $table->date("orderDate");
-            $table->date("requiredDate");
-            $table->date("shippedDate");
+            $table->dateTime("orderDate");
+            $table->dateTime("requiredDate");
+            $table->dateTime("shippedDate");
             $table->enum("status",['waiting', 'cancel', 'shipped']);
             $table->text("comments");
             $table->integer("customerNumber")->unsigned()->nullable();
