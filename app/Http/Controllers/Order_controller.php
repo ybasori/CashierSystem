@@ -87,7 +87,16 @@ class Order_controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //'waiting','confirmed', 'shipped'
+        $status = $request->status;
+        $comment = $request->comment;
+        Order::find($id)->update(
+            [
+                'status'=>$status,
+                'comments'=>$comment, 
+            ]
+            );
+        return redirect("/order/$id");
     }
 
     /**

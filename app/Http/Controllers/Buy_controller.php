@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Order as order;
+use App\Product as product;
 
 class Buy_controller extends Controller
 {
@@ -35,6 +37,19 @@ class Buy_controller extends Controller
     public function store(Request $request)
     {
         //
+        $productNumber      = $request->productCode;
+        $quantityOrdered    = $request->quantity;
+        $priceEach          = $request->totalPrice;
+        $orderNumber        = $request->orderNumber;
+        $orderLineNumber    = rand(1, 10);
+
+        $order = Order::find($orderNumber);
+        // $order->product()->detach($productNumber);
+        $order->product()->syncWithoutDetaching([$productNumber=>['quantityOrdered'=>$quantityOrdered,
+                                                     'priceEach'=>$priceEach,
+                                                     'orderLineNumber'=>$orderLineNumber]]);
+        return back();
+
     }
 
     /**

@@ -22,7 +22,7 @@ class orderSeeder extends Seeder
             $orders->orderDate = $faker->date($format = 'Y-m-d', $max = 'now');
             $orders->requiredDate = $faker->date($format = 'Y-m-d', $max = 'now');
             $orders->shippedDate = $faker->date($format = 'Y-m-d', $max = 'now');
-            $orders->status = $faker->randomElement($array = array ('waiting', 'cancel', 'shipped'));
+            $orders->status = $faker->randomElement($array = array ('waiting','confirmed', 'shipped'));
             $orders->comments = $faker->sentence($nbWords = 6, $variableNbWords = true);
             $orders->customerNumber = $faker->randomElement($customer);
             $orders->created_at = $faker->dateTime;

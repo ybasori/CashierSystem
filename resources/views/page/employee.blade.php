@@ -1,7 +1,7 @@
 @extends("layout.bootstrap")
 @section("content")
 <div class="container">
-zzzz
+okoc
 <table class="table">
 <thead>
 	<tr>

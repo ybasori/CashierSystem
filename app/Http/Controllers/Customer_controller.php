@@ -33,6 +33,7 @@ class Customer_controller extends Controller
     public function show($id){
     	$data["title"]="Customer";
     	$customer=Customers::find($id);
+		$data["employee"]=Employee::find($customer->salesRepEmployeeNumber);
     	$data["customer"]=$customer;
     	$data["myorders"]=$customer->order;
     	return view("page.showCustomer", $data);

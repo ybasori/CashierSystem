@@ -2,7 +2,7 @@
 @section("content")
 <div class="container">
 <div>
-	<a href="/employee">Employee</a>: <a href="/employee/{{$customer->employee->employeeNumber}}">{{$customer->employee->firstName}} {{$customer->employee->lastName}}</a>
+	<a href="/employee">Employee</a>: <a href="/employee/{{$customer->salesRepEmployeeNumber}}">{{$employee->firstName}} {{$employee->lastName}}</a>
 	&nbsp;|&nbsp;
 	Customer: {{$customer->customerName}}
 </div>

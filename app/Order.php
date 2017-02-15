@@ -11,7 +11,8 @@ class Order extends Model
     protected $guarded = ['created_at'];
 
     public function product(){
-        return $this->belongsToMany('App\product','orderdetails','orderNumber','productCode');
+        //jangan lupa kasih pivot biar bisa ngakses table composite ya..OK..Oce
+        return $this->belongsToMany('App\Product','orderdetails','orderNumber','productCode')->withPivot('quantityOrdered', 'priceEach');
     }
     public function customer()
     {

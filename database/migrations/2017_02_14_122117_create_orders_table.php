@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->dateTime("orderDate");
             $table->dateTime("requiredDate");
             $table->dateTime("shippedDate");
-            $table->enum("status",['waiting', 'cancel', 'shipped']);
+            $table->enum("status",['waiting', 'confirmed', 'shipped']);
             $table->text("comments");
             $table->integer("customerNumber")->unsigned()->nullable();
             $table->foreign("customerNumber")->references("customerNumber")->on("customers");
