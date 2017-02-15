@@ -17,7 +17,7 @@ class CreateEmployeesTable extends Migration
             $table->increments('employeeNumber');
             $table->string('lastName',40);
             $table->string('firstName',40);
-            $table->string('extention',40);
+            $table->string('extension',10);
             $table->string('email',50);
             $table->integer('officeCode')->unsigned()->nullable();
             $table->foreign('officeCode')->references('officeCode')->on('offices');
