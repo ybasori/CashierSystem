@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/customer', "Customer_controller");
+Route::resource('/employee', "Employee_controller");
+Route::resource('/order', "Order_controller");
+Route::resource('/buy', "Buy_controller");

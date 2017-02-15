@@ -12,11 +12,11 @@ class Employee extends Model
 
     public function office(){
 
-        return $this->belongsTo('App\Office','employeeNumber');
+        return $this->belongsTo('App\Office','officeCode');
     }
 
     public function customer(){
 
-        return $this->hasMany('App\Customers','employeeNumber');
+        return $this->hasMany('App\Customers','salesRepEmployeeNumber');
     }
 }
