@@ -17,6 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('customerNumber')->unsigned()->nullable();
             $table->foreign('customerNumber')->references('customerNumber')->on('customers');
             $table->increments('checkNumber');
+            $table->dateTime('paymentDate');
             $table->integer('amount');
             $table->timestamps();
         });
