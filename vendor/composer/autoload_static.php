@@ -272,14 +272,14 @@ class ComposerStaticInitd4d974f8867c9f28e2c571967590aef8
     );
 
     public static $classMap = array (
-        'CreateCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122031_create_customers_table.php',
-        'CreateEmployeesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121837_create_employees_table.php',
-        'CreateOfficesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122051_create_offices_table.php',
+        'CreateCustomersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121839_create_customers_table.php',
+        'CreateEmployeesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121838_create_employees_table.php',
+        'CreateOfficesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121836_create_offices_table.php',
         'CreateOrdersTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122117_create_orders_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreatePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122106_create_payments_table.php',
-        'CreateProductlinesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122138_create_productlines_table.php',
-        'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_122130_create_products_table.php',
+        'CreatePaymentsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121840_create_payments_table.php',
+        'CreateProductlinesTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121831_create_productlines_table.php',
+        'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_14_121841_create_products_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -732,6 +732,7 @@ class ComposerStaticInitd4d974f8867c9f28e2c571967590aef8
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'ProductSeeder' => __DIR__ . '/../..' . '/database/seeds/productSeeder.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
@@ -812,6 +813,13 @@ class ComposerStaticInitd4d974f8867c9f28e2c571967590aef8
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'customerSeeder' => __DIR__ . '/../..' . '/database/seeds/customerSeeder.php',
+        'employeeSeeder' => __DIR__ . '/../..' . '/database/seeds/employeeSeeder.php',
+        'officeSeeder' => __DIR__ . '/../..' . '/database/seeds/officeSeeder.php',
+        'orderSeeder' => __DIR__ . '/../..' . '/database/seeds/orderSeeder.php',
+        'orderdetailSeeder' => __DIR__ . '/../..' . '/database/seeds/orderdetailSeeder.php',
+        'paymentSeeder' => __DIR__ . '/../..' . '/database/seeds/paymentSeeder.php',
+        'productlineSeeder' => __DIR__ . '/../..' . '/database/seeds/productlineSeeder.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
