@@ -1,110 +1,118 @@
 @extends("layout.bootstrap")
 @section("content")
-<div class="container">
-<div>
-	<a href="/employee">Employee</a>: <a href="/employee/{{$order->customer->employee->employeeNumber}}">{{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</a>
-	&nbsp;|&nbsp;
-	<a href="/customer/{{$order->customer->customerNumber}}">Customer: {{$order->customer->customerName}}</a>
-</div>
-<hr>
-<div class="row">
-	<div class="col-sm-12">
-		<h2><strong>ORDER DETAIL</strong></h2>
-		<table class="table table-bordered">
-			<tr>
-				<td>
-					Customer Name
-				</td>
-				<td>
-					: {{$customer->customerName}}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Order Number
-				</td>
-				<td>
-					: {{$order->orderNumber}}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Order Time
-				</td>
-				<td>
-					: {{$order->orderDate}}
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Order Status
-				</td>
-				<td>
-					: {{$order->status}}
-				</td>
-			</tr>
-		</table>
+<div class="container-fluid">
+	<div class="col-sm-3">
+		<div class="row">
+			@include("component.sidebar")
+		</div>
 	</div>
-</div>
-<div class="row">
-	<div class="col-sm-12">
-		<h3>Ordered Product</h3>
-		<table class="table table-stripped">
-			<thead>
-			<tr>
-				<th>Product Name</th>
-				<th>Quantity</th>
-				<th>Price Each</th>
-			</tr>
-			</thead>
-			<tbody>
-			@foreach($myproducts as $myproduct)
-			<tr>
-				<td>{{$myproduct->productName}}</td>
-				<td>{{$myproduct->pivot->quantityOrdered}}</td>
-				<td>{{$myproduct->pivot->priceEach}}</td>
-			</tr>
-			@endforeach
-			</tbody>
-		</table>
-		@if ( $order->status == "waiting")
-			<div class="pull-right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalComment">Save Order</button>
-			</div>
-		@elseif ( $order->status == "confirmed")
-			<div class="pull-right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCommentShipped">Shipped</button>
-			</div>
-		@else
-			<div class="pull-right">
-				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalComment" disabled>Save Order</button>
-			</div>
-		@endif
-	</div>
-</div>
-<hr>
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h2><strong>PRODUCT LIST</strong></h2>
-	</div>
-	<div class="panel-body">
-		@foreach($products as $product)
-		<div class="col-sm-4">
-			<div class="thumbnail">
-				<div class="caption">
-					<p style="text-align:center"><strong>{{$product->productName}}</strong></p>
-					<hr>
-					<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalDetail">Show Detail</button>
-					@if ($order->status == "waiting")
-					<button type="button" class="btn btn-success btn-block buyModal" data-toggle="modal" data-target="#modalBuy" id="{{$product->productCode}}">Buy</button>
-					@endif
-				</div>
+	<div class="col-sm-9">
+		<div class="row">
+			<div class="col-sm-12">
+				<a href="/employee">Employee</a>: <a href="/employee/{{$order->customer->employee->employeeNumber}}">{{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</a>
+				&nbsp;|&nbsp;
+				<a href="/customer/{{$order->customer->customerNumber}}">Customer: {{$order->customer->customerName}}</a>
 			</div>
 		</div>
-		@endforeach
+		<hr>
+		<div class="row">
+			<div class="col-sm-12">
+				<h2><strong>ORDER DETAIL</strong></h2>
+				<table class="table table-bordered">
+					<tr>
+						<td>
+							Customer Name
+						</td>
+						<td>
+							: {{$customer->customerName}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Order Number
+						</td>
+						<td>
+							: {{$order->orderNumber}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Order Time
+						</td>
+						<td>
+							: {{$order->orderDate}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Order Status
+						</td>
+						<td>
+							: {{$order->status}}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Ordered Product</h3>
+				<table class="table table-stripped">
+					<thead>
+					<tr>
+						<th>Product Name</th>
+						<th>Quantity</th>
+						<th>Price Each</th>
+					</tr>
+					</thead>
+					<tbody>
+					@foreach($myproducts as $myproduct)
+					<tr>
+						<td>{{$myproduct->productName}}</td>
+						<td>{{$myproduct->pivot->quantityOrdered}}</td>
+						<td>{{$myproduct->pivot->priceEach}}</td>
+					</tr>
+					@endforeach
+					</tbody>
+				</table>
+				@if ( $order->status == "waiting")
+					<div class="pull-right">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalComment">Save Order</button>
+					</div>
+				@elseif ( $order->status == "confirmed")
+					<div class="pull-right">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCommentShipped">Shipped</button>
+					</div>
+				@else
+					<div class="pull-right">
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalComment" disabled>Save Order</button>
+					</div>
+				@endif
+			</div>
+		</div>
+		<hr>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h2><strong>PRODUCT LIST</strong></h2>
+			</div>
+			<div class="panel-body">
+				@foreach($products as $product)
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<div class="caption">
+							<p style="text-align:center"><strong>{{$product->productName}}</strong></p>
+							<hr>
+							<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalDetail">Show Detail</button>
+							@if ($order->status == "waiting")
+							<button type="button" class="btn btn-success btn-block buyModal" data-toggle="modal" data-target="#modalBuy" id="{{$product->productCode}}">Buy</button>
+							@endif
+						</div>
+					</div>
+				</div>
+				@endforeach
+			</div>
+		</div><!--END PANEL-->
 	</div>
-</div><!--END PANEL-->
-
 </div><!--END ROW-->
 
 <!--MODAL DETAIL PRODUCT-->
