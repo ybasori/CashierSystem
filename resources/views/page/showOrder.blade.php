@@ -95,7 +95,9 @@
 					<p style="text-align:center"><strong>{{$product->productName}}</strong></p>
 					<hr>
 					<button type="button" class="btn btn-info btn-block" data-toggle="modal" data-target="#modalDetail">Show Detail</button>
+					@if ($order->status == "waiting")
 					<button type="button" class="btn btn-success btn-block buyModal" data-toggle="modal" data-target="#modalBuy" id="{{$product->productCode}}">Buy</button>
+					@endif
 				</div>
 			</div>
 		</div>
