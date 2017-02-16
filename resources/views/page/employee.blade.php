@@ -30,12 +30,10 @@
 						<tr>
 							<td>{{$employee->firstName}} {{$employee->lastName}}</td>
 							<td>
-								<a class="btn btn-info btn-block" href="/employee/{{$employee->employeeNumber}}"><i class="fa fa-address-card-o" aria-hidden="true"></i>
-</a>
+								<a class="btn btn-info" href="/employee/{{$employee->employeeNumber}}"><i class="fa fa-address-card-o"></i></a>
 							</td>
 							<td>
-								<a class="btn btn-danger btn-block" href=""><i class="fa fa-trash" aria-hidden="true"></i>
-</a>
+								<a class="btn btn-danger" href=""><i class="fa fa-trash"></i></a>
 							</td>
 						</tr>
 						@endforeach
