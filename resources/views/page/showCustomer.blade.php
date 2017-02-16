@@ -13,59 +13,106 @@
 				</div>
 			</div>
 		</div>
-		<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Phone</th>
-				<th>Address 1</th>
-				<th>Address 2</th>
-				<th>City</th>
-				<th>State</th>
-				<th>Postal Code</th>
-				<th>Country</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>{{$customer->customerName}}</td>
-				<td>{{$customer->phone}}</td>
-				<td>{{$customer->addressLine1}}</td>
-				<td>{{$customer->addressLine2}}</td>
-				<td>{{$customer->city}}</td>
-				<td>{{$customer->state}}</td>
-				<td>{{$customer->postalCode}}</td>
-				<td>{{$customer->country}}</td>
-			</tr>
-		</tbody>
-		</table>
-		<form action="/order" method="post">
-			<input type="hidden" name="customerNumber" value="{{$customer->customerNumber}}">
-			<button type="submit">New Order</button>
-		</form>
-		<table class="table">
-		<thead>
-			<tr>
-				<th>Order Time</th>
-				<th>Required Date</th>
-				<th>Shipped Date</th>
-				<th>Status</th>
-				<th>Comment</th>
-			</tr>
-		</thead>
-		<tbody>
-		@foreach($myorders as $order)
-			<tr>
-				<td>{{$order->orderDate}}</td>
-				<td>{{$order->requiredDate}}</td>
-				<td>{{$order->shippedDate}}</td>
-				<td>{{$order->status}}</td>
-				<td>{{$order->comments}}</td>
-				<td><a href="/order/{{$order->orderNumber}}">Show Detail</a></td>
-			</tr>
-		@endforeach
-		</tbody>
-		</table>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					Customer's Info
+				</div>
+				<div class="panel-body">
+				<div class="col-sm-6">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<td>{{$customer->customerName}}</td>
+						</tr>
+						<tr>
+							<th>Phone</th>
+							<td>{{$customer->phone}}</td>
+						</tr>
+						<tr>
+							<th>Country</th>
+							<td>{{$customer->country}}</td>
+						</tr>
+						<tr>
+							<th>State</th>
+							<td>{{$customer->state}}</td>
+						</tr>
+						<tr>
+							<th>City</th>
+							<td>{{$customer->city}}</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-6">
+					<table class="table">
+						<tr>
+							<th rowspan="2">Address</th>
+							<td>{{$customer->addressLine1}}</td>
+						</tr>
+						<tr>
+							<td>{{$customer->addressLine2}}</td>
+						</tr>
+						<tr>
+							<th>Postal Code</th>
+							<td>{{$customer->postalCode}}</td>
+						</tr>
+					</table>
+				</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="pull-left">
+					<form action="/order" method="post">
+						<input type="hidden" name="customerNumber" value="{{$customer->customerNumber}}">
+						<button class="btn btn-default" type="submit">Add New Order</button>
+					</form>
+				</div>
+				<div class="pull-right btn-group">
+					<a class="btn btn-default" href="">Delete Customer</a>
+					<a class="btn btn-default" href="">Edit Customer's Info</a>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						Customer's Orders
+					</div>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Order Time</th>
+								<th>Required Date</th>
+								<th>Shipped Date</th>
+								<th>Status</th>
+								<th>Comment</th>
+								<th colspan="2">Option</th>
+							</tr>
+						</thead>
+						<tbody>
+						@foreach($myorders as $order)
+							<tr>
+								<td>{{$order->orderDate}}</td>
+								<td>{{$order->requiredDate}}</td>
+								<td>{{$order->shippedDate}}</td>
+								<td>{{$order->status}}</td>
+								<td>{{$order->comments}}</td>
+								<td><a href="/order/{{$order->orderNumber}}">Show Detail</a></td>
+							</tr>
+						@endforeach
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
 @include("component.jquery")

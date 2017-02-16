@@ -17,7 +17,7 @@ class Employee_controller extends Controller
     	$employee=Employee::find($id);
     	$data["employee"]=$employee;
     	$data["customer"]=$employee->customer;
-    	$data["title"]="Choose Customer";
+    	$data["title"]="Employee";
     	return view("page.showEmp",$data);
     }
 }
