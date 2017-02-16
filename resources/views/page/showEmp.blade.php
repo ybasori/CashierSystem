@@ -7,7 +7,9 @@
 	<div class="col-sm-9">
 		<div class="row">
 			<div class="col-sm-12">
-				<a href="/employee">Employee</a>: {{$employee->firstName}} {{$employee->lastName}}
+				<div class="btn-group">
+					<a class="btn btn-default">Employee: {{$employee->firstName}} {{$employee->lastName}}</a>
+				</div>
 			</div>
 		</div>
 		<div class="row">

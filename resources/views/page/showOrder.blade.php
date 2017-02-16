@@ -2,16 +2,15 @@
 @section("content")
 <div class="container-fluid">
 	<div class="col-sm-3">
-		<div class="row">
 			@include("component.sidebar")
-		</div>
 	</div>
 	<div class="col-sm-9">
 		<div class="row">
 			<div class="col-sm-12">
-				<a href="/employee">Employee</a>: <a href="/employee/{{$order->customer->employee->employeeNumber}}">{{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</a>
-				&nbsp;|&nbsp;
-				<a href="/customer/{{$order->customer->customerNumber}}">Customer: {{$order->customer->customerName}}</a>
+				<div class="btn-group">
+				<a class="btn btn-default" href="/employee/{{$order->customer->employee->employeeNumber}}">Employee: {{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</a>
+				<a class="btn btn-default" href="/customer/{{$order->customer->customerNumber}}">Customer: {{$order->customer->customerName}}</a>
+				</div>
 			</div>
 		</div>
 		<hr>

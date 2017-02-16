@@ -22,6 +22,6 @@ class Customers extends Model
 
     public function employee(){
 
-        return $this->belongsTo('App\Employee','customerNumber');
+        return $this->belongsTo('App\Employee','salesRepEmployeeNumber');
     }
 }
