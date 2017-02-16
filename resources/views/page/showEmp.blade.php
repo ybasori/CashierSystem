@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="btn-group">
-					<a class="btn btn-default">Employee: {{$employee->firstName}} {{$employee->lastName}}</a>
+					<a class="btn btn-default">Employee: <strong>{{$employee->firstName}} {{$employee->lastName}}</strong></a>
 				</div>
 			</div>
 		</div>

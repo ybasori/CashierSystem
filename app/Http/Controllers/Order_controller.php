@@ -17,6 +17,9 @@ class Order_controller extends Controller
     public function index()
     {
         //
+        $data["orders"]=Order::all();
+        $data["title"]="Orders";
+        return view("page.order", $data);
     }
 
     /**

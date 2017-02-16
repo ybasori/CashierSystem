@@ -8,8 +8,8 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="btn-group">
-				<a class="btn btn-default" href="/employee/{{$customer->salesRepEmployeeNumber}}">Employee: {{$employee->firstName}} {{$employee->lastName}}</a>
-				<a class="btn btn-default">Customer: {{$customer->customerName}}</a>
+				<a class="btn btn-default" href="/employee/{{$customer->salesRepEmployeeNumber}}">Employee: <strong>{{$employee->firstName}} {{$employee->lastName}}</strong></a>
+				<a class="btn btn-default">Customer: <strong>{{$customer->customerName}}</strong></a>
 				</div>
 			</div>
 		</div>

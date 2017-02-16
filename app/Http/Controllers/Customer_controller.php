@@ -10,6 +10,12 @@ use App\Order;
 class Customer_controller extends Controller
 {
     //
+    public function index()
+    {
+        $data["customers"]=Customers::all();
+        $data["title"]="Customers";
+        return view("page.customer", $data);
+    }
     public function create()
     {
     	$data["employee"]=Employee::all();

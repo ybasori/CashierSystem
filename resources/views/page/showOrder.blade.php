@@ -8,8 +8,9 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="btn-group">
-				<a class="btn btn-default" href="/employee/{{$order->customer->employee->employeeNumber}}">Employee: {{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</a>
-				<a class="btn btn-default" href="/customer/{{$order->customer->customerNumber}}">Customer: {{$order->customer->customerName}}</a>
+				<a class="btn btn-default" href="/employee/{{$order->customer->employee->employeeNumber}}">Employee: <strong>{{$order->customer->employee->firstName}} {{$order->customer->employee->lastName}}</strong></a>
+				<a class="btn btn-default" href="/customer/{{$order->customer->customerNumber}}">Customer: <strong>{{$order->customer->customerName}}</strong></a>
+				<a class="btn btn-default"><strong>Order #{{$order->orderNumber}}</strong></a>
 				</div>
 			</div>
 		</div>
