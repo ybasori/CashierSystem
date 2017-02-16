@@ -18,7 +18,7 @@
 			<div class="col-sm-12">
 			<div class="panel panel-info">
 				<div class="panel-heading">
-					Customer's Info
+					<h5><strong>CUSTOMER'S INFO</strong></h5>
 				</div>
 				<div class="panel-body">
 				<div class="col-sm-6">
@@ -83,7 +83,7 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Customer's Orders
+						<h5><strong>CUSTOMER'S ORDERS</strong></h5>
 					</div>
 					<table class="table">
 						<thead>

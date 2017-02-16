@@ -16,7 +16,9 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel panel-info">
-					<div class="panel-heading">Employee's Info</div>
+					<div class="panel-heading">
+					<h5><strong>EMPLOYEE'S INFO</strong></h5>
+					</div>
 					<div class="panel-body">
 					<table class="table">
 						<tr>
@@ -72,7 +74,7 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						Employee's Customers
+						<h5><strong>EMPLOYEE'S CUSTOMERS</strong></h5>
 					</div>
 					<table class="table">
 						<thead>
