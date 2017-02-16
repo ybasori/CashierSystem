@@ -23,18 +23,21 @@ class Customer_controller extends Controller
     	return view("page.newcustomer",$data);
     }
     public function store(Request $request){
-    	// $cust= new Customers;
-    	// $cust->customerName=$request->fname." ".$request->lname;
-    	// $cust->firstName=$request->fname;
-    	// $cust->lastName=$request->lname;
-    	// $cust->phone
-    	// $cust->addressLine1
-    	// $cust->addressLine2
-    	// $cust->city
-    	// $cust->state
-    	// $cust->postalCode
-    	// $cust->country
-    	// $cust->salesRepEmployeeNumber
+    	$cust= new Customers;
+    	$cust->customerName=$request->fname." ".$request->lname;
+    	$cust->contactFirstName=$request->fname;
+    	$cust->contactLastName=$request->lname;
+    	$cust->phone=$request->phone;
+    	$cust->addressLine1=$request->address1;
+    	$cust->addressLine2=empty($request->address2)?"":$request->address2;
+    	$cust->city=$request->city;
+    	$cust->state=$request->state;
+    	$cust->postalCode=$request->pos;
+    	$cust->country=$request->country;
+    	$cust->salesRepEmployeeNumber=$request->employeeNumber;
+        $cust->creditLimit=0;
+        $cust->save();
+        return redirect("/employee/".$request->employeeNumber);
     }
     public function show($id){
     	$data["title"]="Customer";

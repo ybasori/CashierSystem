@@ -130,6 +130,7 @@
 </div>
 {{-- Modal end --}}
 {{-- Modal Add Customer start --}}
+
 <div class="modal fade" id="newcustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -138,11 +139,66 @@
         <h4 class="modal-title" id="myModalLabel">New Customer</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <form method="post" action="/customer" class="form-horizontal">
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">First Name</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="fname" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Last Name</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="lname" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Phone</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="phone" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Address</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="address1" class="form-control">
+    		</div>
+    		<div class="col-sm-9 col-sm-offset-3">
+    			<input type="text" name="address2" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">City</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="city" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">State</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="state" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Postal Code</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="pos" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Country</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="country" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-9 col-sm-offset-3">
+    			<input type="hidden" name="employeeNumber" value="{{$employee->employeeNumber}}">
+    			<button type="submit" class="btn btn-primary">Save changes</button>
+    		</div>
+    	</div>
+    		
+    	</form>
       </div>
     </div>
   </div>

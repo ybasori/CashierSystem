@@ -52,11 +52,58 @@
         <h4 class="modal-title" id="myModalLabel">New Employee</h4>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+    	<form method="post" action="/employee" class="form-horizontal">
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">First Name</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="fname" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Last Name</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="lname" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">E-mail</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="email" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Reports to</label>
+    		<div class="col-sm-9">
+    			<select class="form-control">
+    				@foreach($employees as $emp)
+    				<option value="{{$emp->employeeNumber}}">{{$emp->firstName}} {{$emp->lastName}}</option>
+    				@endforeach
+    			</select>
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Office</label>
+    		<div class="col-sm-9">
+    			<select class="form-control">
+    				@foreach($offices as $office)
+    				<option value="{{$office->officeCode}}">{{$office->territory}}</option>
+    				@endforeach
+    			</select>
+    		</div>
+    	</div>
+    	
+    	<div class="form-group">
+    		<label class="col-sm-3 control-label">Job Title</label>
+    		<div class="col-sm-9">
+    			<input type="text" name="state" class="form-control">
+    		</div>
+    	</div>
+    	<div class="form-group">
+    		<div class="col-sm-9 col-sm-offset-3">
+    			<button type="submit" class="btn btn-primary">Save changes</button>
+    		</div>
+    	</div>
+    	</form>
       </div>
     </div>
   </div>
